@@ -1,0 +1,85 @@
+/* font face */
+@font-face {
+    font-family: "Pretendard-SemiBold";
+    src: url("/fonts/Pretendard-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Pretendard-Medium";
+    src: url("/fonts/Pretendard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Pretendard-Light";
+    src: url("/fonts/Pretendard-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("/fonts/Pretendard-Regular.woff2") format("woff2");
+}
+
+:root {
+    --font-primary: "Pretendard-Regular", sans-serif;
+    --font-secondary: serif;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-light: 300;
+
+    --text-base-size: 16px;
+    --title-size: 36px;
+    --body1-size: 20px;
+    --body2-size: 16px;
+    --caption1-size: 20px;
+    --caption2-size: 13px;
+
+    --letter-spacing-tight: -4%;
+    --line-height-default: 130%;
+}
+
+.light {
+    --black: #000000;
+    --gray100: #777777;
+    --gray200: #888888;
+    --gray300: #898484;
+    --gray400: #e3e3e3;
+    --blue100: #435dee;
+    --blue200: #cedef7;
+    --blue300: #e7f2ff;
+    --red: #ee4346;
+}
+
+/* CSS 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base-size);
+    line-height: var(--line-height-default);
+    letter-spacing: var(--letter-spacing-tight);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
