@@ -10,13 +10,13 @@ export const StyledButton = styled.button`
     font-weight: ${fontWeight.medium};
 
     color: var(--black);
-    border: 1px solid ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue200)" : "var(--gray200)")};
-    background-color: ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue300)" : "var(--gray300)")};
+    border: 1px solid ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue200)" : "var(--gray300)")};
+    background-color: ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue300)" : "var(--gray400)")};
     border-radius: ${({ styleVariant }) => (styleVariant === "rounded" ? "57px" : "10px")};
     transition: all 0.2s ease-in-out;
 
     &:hover {
-        background-color: ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue200)" : "var(--gray200)")};
+        background-color: ${({ colorVariant }) => (colorVariant === "primary" ? "var(--blue200)" : "var(--gray300)")};
     }
 
     &:disabled {
