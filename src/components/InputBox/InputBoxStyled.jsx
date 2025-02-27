@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
+    width: 100%;
     font-family: ${fontFamily.regular};
     font-weight: ${fontWeight.regular};
     gap: 8px;
