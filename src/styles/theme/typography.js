@@ -13,11 +13,11 @@ const fontWeight = {
 };
 
 const fontSize = {
-    title: ["36px", { lineHeight: "130%", letterSpacing: "-4%" }],
-    body1: ["20px", { lineHeight: "130%", letterSpacing: "-4%" }],
-    body2: ["16px", { lineHeight: "130%", letterSpacing: "-4%" }],
-    caption1: ["20px", { lineHeight: "130%", letterSpacing: "-4%" }],
-    caption2: ["13px", { lineHeight: "130%", letterSpacing: "-4%" }],
+    title: "36px",
+    body1: "20px",
+    body2: "16px",
+    caption1: "20px",
+    caption2: "13px",
 };
 
 export { fontFamily, fontSize, fontWeight };
