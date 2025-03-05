@@ -1,8 +1,8 @@
 const fontFamily = {
-    semiBold: ["Pretendard-SemiBold", "sans-serif"],
-    medium: ["Pretendard-Medium", "sans-serif"],
-    light: ["Pretendard-Light", "sans-serif"],
-    regular: ["Pretendard-Regular", "sans-serif"],
+    semiBold: "Pretendard-SemiBold",
+    medium: "Pretendard-Medium",
+    light: "Pretendard-Light",
+    regular: "Pretendard-Regular",
 };
 
 const fontWeight = {

@@ -22,8 +22,8 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     border: 1px solid
-        ${({ validCheck, isValid, value }) =>
-            value ? (validCheck ? (isValid ? "var(--blue100)" : "var(--red)") : "var(--gray500)") : "var(--gray500)"};
+        ${({ $validCheck, $isValid, value }) =>
+            value ? ($validCheck ? ($isValid ? "var(--blue100)" : "var(--red)") : "var(--gray500)") : "var(--gray500)"};
     border-radius: 10px;
     padding: 14px 18px;
 `;
@@ -47,5 +47,6 @@ export const IconWrapper = styled.div`
 
 export const HelpText = styled.span`
     font-size: ${fontSize.caption2};
-    color: ${({ isValid }) => (isValid === undefined ? "var(--gray500)" : isValid ? "var(--blue100)" : "var(--red)")};
+    color: ${({ $isValid }) =>
+        $isValid === undefined ? "var(--gray100)" : $isValid ? "var(--blue100)" : "var(--red)"};
 `;

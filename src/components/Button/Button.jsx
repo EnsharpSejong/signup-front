@@ -10,7 +10,7 @@ import { StyledButton } from "./ButtonStyled";
  * @returns {React.Element} 버튼 요소
  */
 const Button = ({ colorVariant = "primary", styleVariant = "rounded", ...props }) => {
-    return <StyledButton colorVariant={colorVariant} styleVariant={styleVariant} {...props} />;
+    return <StyledButton $colorVariant={colorVariant} $styleVariant={styleVariant} {...props} />;
 };
 
 export default Button;
