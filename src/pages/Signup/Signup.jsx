@@ -4,12 +4,14 @@ import useEmailValidation from "../../hooks/useEmailValidation";
 import useSignupApi from "../../hooks/useSignupApi";
 import { Button, Form, InputBox, Space, Loader } from "../../components";
 import * as S from "./SignupStyled";
+import useAddressSearch from "../../hooks/useAddressSearch";
 
 const Signup = () => {
     const [userInfo, dispatch] = useReducer(signupReducer, initialState);
     const { emailHelpText, handleEmailValidation } = useEmailValidation(userInfo.email, dispatch);
     const { handleSignup, handleSendVerification, isLoading, isSent, verificationHelpText, isVerificationHelpText } =
         useSignupApi(userInfo);
+    const { address, handleSearchAddress } = useAddressSearch();
 
     const handleChange = (field) => (value) => dispatch({ type: "SET_FIELD", field, value });
     const handleValidation = (field) => (isValid) => dispatch({ type: "SET_IS_VALID", field, isValid });
@@ -17,6 +19,10 @@ const Signup = () => {
     useEffect(() => {
         handleEmailValidation();
     }, [userInfo.email.value]);
+
+    useEffect(() => {
+        handleChange("address")(address);
+    }, [address]);
 
     return (
         <Form formStyles={{ width: "516px" }} innerStyles={{ gap: "8px" }}>
@@ -90,12 +96,11 @@ const Signup = () => {
             <Space size={4} />
             <InputBox
                 value={userInfo.address.value}
-                setValue={handleChange("address")}
-                setIsValid={handleValidation("address")}
                 label="주소"
                 inputType="address"
                 placeholder="주소"
-                validCheck
+                readOnly
+                onClick={handleSearchAddress}
             />
             <InputBox
                 value={userInfo.detailAddress.value}
