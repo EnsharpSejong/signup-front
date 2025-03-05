@@ -2,6 +2,7 @@ import { Button, Form, Space } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import * as S from "./MyInfoStyled";
+import { ROUTE_LOGIN_PAGE } from "../../constant";
 
 const MyInfo = () => {
     const navigate = useNavigate();
@@ -9,12 +10,12 @@ const MyInfo = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("loginedEmail");
-        navigate("/");
+        navigate(ROUTE_LOGIN_PAGE);
     };
 
     useEffect(() => {
         if (!loginedEmail) {
-            navigate("/");
+            navigate(ROUTE_LOGIN_PAGE);
         }
     }, [loginedEmail, navigate]);
 

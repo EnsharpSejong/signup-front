@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { userApi, verificationApi } from "../apis";
-import { signupErrorText } from "../constant";
+import { ROUTE_LOGIN_PAGE, signupErrorText } from "../constant";
 
 const useSignupApi = (userInfo) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +38,7 @@ const useSignupApi = (userInfo) => {
             });
 
             alert("회원가입이 성공적으로 완료되었습니다.");
-            window.location.href = "/";
+            window.location.href = ROUTE_LOGIN_PAGE;
         } catch (error) {
             const status = error.response?.status;
             setVerificationHelpText(signupErrorText[status]);

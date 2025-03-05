@@ -4,6 +4,7 @@ import { isValidInput } from "../../utils/regex";
 import { Button, Form, InputBox, Space, Loader } from "../../components";
 import * as S from "./FindPasswordStyled";
 import { verificationApi } from "../../apis";
+import { ROUTE_RESET_PASSWORD_PAGE } from "../../constant";
 
 const FindPassword = () => {
     const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ const FindPassword = () => {
         verificationApi
             .confirm({ email: email, code: verificationNumber })
             .then(() => {
-                navigate("/reset-password", { state: { email } });
+                navigate(ROUTE_RESET_PASSWORD_PAGE, { state: { email } });
             })
             .catch(() => {
                 setVerificationHelpTextValid(false);

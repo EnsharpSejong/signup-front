@@ -4,6 +4,7 @@ import { isValidInput } from "../../utils/regex";
 import { Button, Form, InputBox, Space, Loader } from "../../components";
 import * as S from "./ResetPasswordStyled";
 import { userApi } from "../../apis";
+import { ROUTE_FIND_PASSWORD_PAGE, ROUTE_LOGIN_PAGE } from "../../constant";
 
 const ResetPassword = () => {
     const [password, setPassword] = useState("");
@@ -42,7 +43,7 @@ const ResetPassword = () => {
 
     useEffect(() => {
         if (!email) {
-            navigate("/find-password");
+            navigate(ROUTE_FIND_PASSWORD_PAGE);
         }
     }, [email, navigate]);
 
@@ -55,7 +56,7 @@ const ResetPassword = () => {
                     <S.StyledCheckIcon />
                     <S.CompleteText>비밀번호 재설정 완료</S.CompleteText>
                     <Space size={7} />
-                    <Button onClick={() => navigate("/")}>로그인 하기</Button>
+                    <Button onClick={() => navigate(ROUTE_LOGIN_PAGE)}>로그인 하기</Button>
                 </>
             ) : (
                 <>

@@ -1,4 +1,4 @@
-import { ERROR_STATUS, loginErrorText } from "../../constant";
+import { ERROR_STATUS, loginErrorText, ROUTE_MY_INFO_PAGE, ROUTE_SIGNUP_PAGE } from "../../constant";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { userApi } from "../../apis";
@@ -76,7 +76,7 @@ const Login = () => {
                     localStorage.removeItem("storedEmail");
                 }
                 localStorage.setItem("loginedEmail", email);
-                navigate("/my-info");
+                navigate(ROUTE_MY_INFO_PAGE);
             })
             .catch((error) => {
                 handleErrorText(error.response.status);
@@ -150,7 +150,7 @@ const Login = () => {
                 Login
             </Button>
             <S.SignupText>
-                계정이 없으신가요? <S.StyledLink href="/signup">회원가입</S.StyledLink>
+                계정이 없으신가요? <S.StyledLink href={ROUTE_SIGNUP_PAGE}>회원가입</S.StyledLink>
             </S.SignupText>
             {isLoading && <Loader />}
         </Form>
