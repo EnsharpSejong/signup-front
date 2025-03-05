@@ -35,7 +35,7 @@
     --caption1-size: 20px;
     --caption2-size: 13px;
 
-    --letter-spacing-tight: -4%;
+    --letter-spacing-tight: -0.04em;
     --line-height-default: 130%;
 }
 
@@ -67,6 +67,14 @@ body {
     letter-spacing: var(--letter-spacing-tight);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #bcdcff, #ffffff);
+    margin: 0;
 }
 
 button {
