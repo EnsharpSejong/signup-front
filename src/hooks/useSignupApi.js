@@ -9,6 +9,7 @@ const useSignupApi = (userInfo) => {
     const [isSent, setIsSent] = useState(false);
 
     const handleSendVerification = async () => {
+        setIsLoading(true);
         try {
             await verificationApi.request(userInfo.email.value);
             setVerificationHelpText(isSent ? "인증번호를 재전송했습니다." : "인증번호를 전송했습니다.");
@@ -17,6 +18,8 @@ const useSignupApi = (userInfo) => {
         } catch {
             setVerificationHelpText("인증번호 전송에 실패했습니다.");
             setIsVerificationHelpText(false);
+        } finally {
+            setIsLoading(false);
         }
     };
 
