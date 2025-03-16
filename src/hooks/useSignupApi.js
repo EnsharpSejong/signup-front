@@ -29,7 +29,7 @@ const useSignupApi = (userInfo) => {
         try {
             await verificationApi.confirm({
                 email: userInfo.email.value,
-                code: userInfo.verificationNumber.value,
+                verificationCode: userInfo.verificationNumber.value,
             });
 
             await userApi.signup({

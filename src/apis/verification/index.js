@@ -9,10 +9,10 @@ export const verificationApi = {
     },
 
     // 확인
-    confirm: async ({ email, code }) => {
+    confirm: async ({ email, verificationCode }) => {
         return await apiPostRequest(`${import.meta.env.VITE_API_BASE_URL}/api/v1/email-verification/confirm`, {
             email,
-            code,
+            verificationCode,
         });
     },
 };
