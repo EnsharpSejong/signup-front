@@ -31,7 +31,7 @@ const FindPassword = () => {
 
         setIsLoading(true);
         verificationApi
-            .confirm({ email: email, code: verificationNumber })
+            .confirm({ email: email, verificationCode: verificationNumber })
             .then(() => {
                 navigate(ROUTE_RESET_PASSWORD_PAGE, { state: { email } });
             })
