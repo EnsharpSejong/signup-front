@@ -1,4 +1,4 @@
-import { apiPostRequest, apiPatchRequest } from "..";
+import { apiPostRequest, apiPatchRequest, apiGetRequest } from "..";
 
 export const userApi = {
     // 이메일 체크
@@ -25,5 +25,11 @@ export const userApi = {
     // 비밀번호 재설정
     resetPassword: async ({ email, password }) => {
         return await apiPatchRequest(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/password`, { email, password });
+    },
+
+    // 정보 조회
+    getInformation: async (email) => {
+        const url = `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/${encodeURIComponent(email)}`;
+        return await apiGetRequest(url);
     },
 };
