@@ -7,3 +7,13 @@ export const TitleText = styled.div`
     font-size: ${fontSize.title};
     line-height: 43px;
 `;
+
+export const MyInfoList = styled.ul`
+    font-family: ${fontFamily.regular};
+    font-weight: ${fontWeight.medium};
+    font-size: ${fontSize.caption1};
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+`;
