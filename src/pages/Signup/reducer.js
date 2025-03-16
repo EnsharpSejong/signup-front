@@ -4,7 +4,7 @@ export const initialState = {
     password: { value: "", isValid: false },
     passwordCheck: { value: "", isValid: false },
     name: { value: "", isValid: true },
-    address: { value: "", isValid: false },
+    address: { value: "", isValid: true },
     detailAddress: { value: "", isValid: true },
 };
 
