@@ -22,6 +22,7 @@ const Signup = () => {
 
     useEffect(() => {
         handleChange("address")(address);
+        if (address !== "") handleValidation("address")(true);
     }, [address]);
 
     return (
